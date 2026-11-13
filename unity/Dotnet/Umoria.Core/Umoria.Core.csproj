@@ -1,0 +1,15 @@
+<!-- Builds the engine-independent game logic (Assets/Umoria/Core) outside Unity,
+     so it can be compiled and tested with the plain .NET SDK and in CI. -->
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <!-- Unity 6 supports C# 9; keep the core to that language version. -->
+    <LangVersion>9.0</LangVersion>
+    <Nullable>disable</Nullable>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../Assets/Umoria/Core/**/*.cs" />
+  </ItemGroup>
+</Project>
